@@ -15,7 +15,7 @@ import com.codepath.apps.restclienttemplate.models.Tweet;
 
 import java.util.List;
 
-public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder> {
+public class TweetsAdapterNight extends RecyclerView.Adapter<TweetsAdapterNight.ViewHolder> {
 
     private Context context;
     private List<Tweet> tweets;
@@ -23,7 +23,7 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
 
 
     // Pass in context and list of tweets
-    public TweetsAdapter(Context context, List<Tweet> tweets) {
+    public TweetsAdapterNight(Context context, List<Tweet> tweets) {
         this.context = context;
         this.tweets = tweets;
     }
@@ -33,10 +33,7 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-
-
-        View view = LayoutInflater.from(context).inflate(R.layout.item_tweet, parent, false);
-
+        View view = LayoutInflater.from(context).inflate(R.layout.item_tweet_night, parent, false);
 
 
         return new ViewHolder(view);
@@ -77,6 +74,7 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
             tvBody = itemView.findViewById(R.id.tvBody);
             tvTime = itemView.findViewById(R.id.tvTime);
             ibNight = itemView.findViewById(R.id.ibNight);
+
         }
 
     }

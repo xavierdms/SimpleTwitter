@@ -21,19 +21,18 @@ import java.util.List;
 
 import cz.msebera.android.httpclient.Header;
 
-public class TimelineActivity extends AppCompatActivity {
+public class TimelineActivityNight extends AppCompatActivity {
 
     private TwitterClient client;
     RecyclerView rvTweets;
-    private TweetsAdapter adapter;
-    private TweetsAdapterNight adapterNight;
+    private TweetsAdapterNight adapter;
     private List<Tweet> tweets;
     private ImageButton ibNight;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_timeline);
+        setContentView(R.layout.activity_timeline_night);
 
         client = TwitterApp.getRestClient(this);
 
@@ -42,14 +41,12 @@ public class TimelineActivity extends AppCompatActivity {
 
         // initialize list of tweets and adapter from the data source
         tweets = new ArrayList<>();
-        adapter = new TweetsAdapter(this, tweets);
+        adapter = new TweetsAdapterNight(this, tweets);
         // recycler view setup: layout manager and setting adapter
         rvTweets.setLayoutManager(new LinearLayoutManager(this));
         rvTweets.setAdapter(adapter);
 
         ibNight = findViewById(R.id.ibNight);
-        adapterNight = new TweetsAdapterNight(this, tweets);
-        //final View itemTweet = findViewById(R.id.tweetLayout);
 
 
         populateHomeTimeline();
@@ -57,12 +54,10 @@ public class TimelineActivity extends AppCompatActivity {
         ibNight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(TimelineActivity.this, TimelineActivityNight.class
+                startActivity(new Intent(TimelineActivityNight.this, TimelineActivity.class
                 ));
             }
         });
-
-
     }
 
     private void populateHomeTimeline() {

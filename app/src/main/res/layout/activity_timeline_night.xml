@@ -10,9 +10,8 @@
         android:id="@+id/view"
         android:layout_width="0dp"
         android:layout_height="50dp"
-        android:background="@color/colorAccent"
+        android:background="@color/colorNightBar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -35,7 +34,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="8dp"
         android:background="@color/colorTransparent"
-        android:tint="@color/colorWhite"
+        android:tint="@color/colorAccent"
         app:layout_constraintBottom_toBottomOf="@+id/view"
         app:layout_constraintEnd_toEndOf="@+id/view"
         app:layout_constraintStart_toStartOf="parent"
@@ -51,10 +50,10 @@
         android:layout_marginBottom="8dp"
         android:background="@color/colorTransparent"
         android:clickable="true"
-        android:tint="@color/colorWhite"
+        android:tint="@color/colorAccent"
         app:layout_constraintBottom_toBottomOf="@+id/view"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_iconmonstr_weather_119" />
+        app:srcCompat="@drawable/ic_iconmonstr_weather_118" />
 
 </android.support.constraint.ConstraintLayout>

@@ -2,9 +2,9 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/tweetLayout"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@color/colorNight">
 
 
     <FrameLayout
@@ -29,7 +29,7 @@
             android:id="@+id/ivProfileImageCircle"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:src="@drawable/circle" />
+            android:src="@drawable/circle_night" />
     </FrameLayout>
 
     <TextView
@@ -39,7 +39,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="TextView"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@color/colorBlueGray"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/ivProfileImageFrame"
         app:layout_constraintTop_toTopOf="parent"
@@ -52,6 +52,7 @@
         android:layout_marginStart="1dp"
         android:layout_marginTop="8dp"
         android:text="TextView"
+        android:textColor="@color/colorButtonGrey"
         app:layout_constraintStart_toEndOf="@+id/textView4"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="xvrdms" />
@@ -67,7 +68,7 @@
         android:linksClickable="true"
         android:text="TextView"
         android:textColorLink="@color/colorAccent"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@color/colorBlueGray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/ivProfileImageFrame"
         app:layout_constraintTop_toBottomOf="@+id/tvName"
@@ -80,6 +81,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="@string/at"
+        android:textColor="@color/colorButtonGrey"
         app:layout_constraintStart_toEndOf="@+id/tvName"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -91,7 +93,7 @@
         android:layout_marginTop="8dp"
         android:background="@color/colorTransparent"
         android:scaleType="fitCenter"
-        android:tint="@color/colorButtonGrey"
+        android:tint="@color/colorGrey"
         app:layout_constraintStart_toEndOf="@+id/ivProfileImageFrame"
         app:layout_constraintTop_toBottomOf="@+id/tvBody"
         app:srcCompat="@drawable/ic_iconmonstr_speech_bubble_2" />
@@ -104,7 +106,7 @@
         android:layout_marginTop="5dp"
         android:background="@color/colorTransparent"
         android:scaleType="fitCenter"
-        android:tint="@color/colorButtonGrey"
+        android:tint="@color/colorGrey"
         app:layout_constraintStart_toEndOf="@+id/ibReply"
         app:layout_constraintTop_toBottomOf="@+id/tvBody"
         app:srcCompat="@drawable/ic_iconmonstr_retweet_1" />
@@ -117,7 +119,7 @@
         android:layout_marginTop="8dp"
         android:background="@color/colorTransparent"
         android:scaleType="fitCenter"
-        android:tint="@color/colorButtonGrey"
+        android:tint="@color/colorGrey"
         app:layout_constraintStart_toEndOf="@+id/ibRetweet"
         app:layout_constraintTop_toBottomOf="@+id/tvBody"
         app:srcCompat="@drawable/ic_iconmonstr_favorite_4" />
@@ -126,7 +128,7 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginTop="10dp"
-        android:background="@color/colorButtonGrey"
+        android:background="@color/colorGrey"
         app:layout_constraintTop_toBottomOf="@+id/ibReply"
         tools:layout_editor_absoluteX="0dp" />
 
@@ -137,6 +139,7 @@
         android:layout_marginStart="4dp"
         android:layout_marginTop="8dp"
         android:text="•"
+        android:textColor="@color/colorButtonGrey"
         app:layout_constraintStart_toEndOf="@+id/tvScreenName"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -147,6 +150,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="TextView"
+        android:textColor="@color/colorButtonGrey"
         app:layout_constraintStart_toEndOf="@+id/textView5"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="8m" />
