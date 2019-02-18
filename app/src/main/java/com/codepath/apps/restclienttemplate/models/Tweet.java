@@ -3,7 +3,7 @@ package com.codepath.apps.restclienttemplate.models;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import static com.codepath.apps.restclienttemplate.models.TimeFormatter.*;
+import static com.codepath.apps.restclienttemplate.models.TimeFormatter.getTimeDifference;
 
 
 public class Tweet {
@@ -13,7 +13,7 @@ public class Tweet {
     public String createdAt;
     public User user;
     public String time;
-
+    public String mediaUrl;
 
     public static Tweet fromJson(JSONObject jsonObject) throws JSONException {
         Tweet tweet = new Tweet();
@@ -23,9 +23,11 @@ public class Tweet {
         String formattedTime = getTimeDifference(tweet.createdAt);
         tweet.time = formattedTime;
         tweet.user = User.fromJson(jsonObject.getJSONObject("user"));
+
+
+
         return tweet;
     }
-
 
 
 }

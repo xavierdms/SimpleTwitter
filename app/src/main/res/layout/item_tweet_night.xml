@@ -53,7 +53,7 @@
         android:layout_marginTop="8dp"
         android:text="TextView"
         android:textColor="@color/colorButtonGrey"
-        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintStart_toEndOf="@+id/tvAt"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="xvrdms" />
 
@@ -75,7 +75,7 @@
         tools:text="This is an example tweet." />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/tvAt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -125,6 +125,7 @@
         app:srcCompat="@drawable/ic_iconmonstr_favorite_4" />
 
     <View
+        android:id="@+id/vBar"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginTop="10dp"
@@ -133,7 +134,7 @@
         tools:layout_editor_absoluteX="0dp" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/tvDot"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
@@ -151,7 +152,8 @@
         android:layout_marginTop="8dp"
         android:text="TextView"
         android:textColor="@color/colorButtonGrey"
-        app:layout_constraintStart_toEndOf="@+id/textView5"
+        app:layout_constraintStart_toEndOf="@+id/tvDot"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="8m" />
+
 </android.support.constraint.ConstraintLayout>

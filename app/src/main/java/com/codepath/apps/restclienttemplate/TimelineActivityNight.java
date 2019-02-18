@@ -2,6 +2,7 @@ package com.codepath.apps.restclienttemplate;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -29,12 +30,22 @@ public class TimelineActivityNight extends AppCompatActivity {
     private List<Tweet> tweets;
     private ImageButton ibNight;
 
+    private SwipeRefreshLayout swipeContainer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timeline_night);
 
         client = TwitterApp.getRestClient(this);
+
+        swipeContainer = findViewById(R.id.swipeContainer);
+
+        swipeContainer.setColorSchemeResources(R.color.colorAccent,
+                R.color.colorNightBar,
+                R.color.colorAccent,
+                R.color.colorNightBar);
+
 
         // find the recycler view
         rvTweets = findViewById(R.id.rvTweets);
@@ -51,6 +62,14 @@ public class TimelineActivityNight extends AppCompatActivity {
 
         populateHomeTimeline();
 
+        swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                Log.d("TwitterClient", "Content is being refreshed");
+                populateHomeTimeline();
+            }
+        });
+
         ibNight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -66,6 +85,8 @@ public class TimelineActivityNight extends AppCompatActivity {
             public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
                 //Log.d("TwitterClient", response.toString());
                 // iterate through the list of tweets
+
+                List<Tweet> tweetsToAdd = new ArrayList<>();
                 for (int i = 0; i < response.length(); i++)
                 {
                     try {
@@ -73,13 +94,16 @@ public class TimelineActivityNight extends AppCompatActivity {
                         JSONObject jsonTweetObject = response.getJSONObject(i);
                         Tweet tweet = Tweet.fromJson(jsonTweetObject);
                         // add the tweet into the data source
-                        tweets.add(tweet);
-                        // notify the adapter
-                        adapter.notifyItemInserted(tweets.size() - 1);
+                        tweetsToAdd.add(tweet);
+
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
                 }
+                adapter.clear();
+                adapter.addTweets(tweetsToAdd);
+                // Now we call setRefreshing(false) to signal refresh has finished
+                swipeContainer.setRefreshing(false);
 
             }
 
