@@ -11,7 +11,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.Toast;
 
 import com.codepath.apps.restclienttemplate.models.Tweet;
 import com.loopj.android.http.JsonHttpResponseHandler;
@@ -94,8 +93,10 @@ public class TimelineActivityNight extends AppCompatActivity {
         if (item.getItemId() == R.id.compose)
         {
             // Tapped on the compose icon
-            Toast.makeText(this,"Compose!", Toast.LENGTH_SHORT).show();
+
             // Navigate to a new activity
+            Intent i = new Intent(this, ComposeActivity.class);
+            this.startActivity(i);
             return true;
         }
         return super.onOptionsItemSelected(item);
