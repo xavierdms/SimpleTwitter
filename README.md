@@ -2,23 +2,23 @@
 
 **SimpleTwitter** is an android app that allows a user to view his Twitter timeline. The app utilizes [Twitter REST API](https://dev.twitter.com/rest/public).
 
-Time spent: **5** hours spent in total
+Time spent: **6** hours spent in total
 
 ## User Stories
 
 The following **required** functionality is completed:
 
 - [ ] User can **compose and post a new tweet**
-  - [ ] User can click a “Compose” icon in the Action Bar on the top right
-  - [ ] User can then enter a new tweet and post this to twitter
+  - [x] User can click a “Compose” icon in the Action Bar on the top right
+  - [x] User can then enter a new tweet and post this to twitter
   - [ ] User is taken back to home timeline with **new tweet visible** in timeline
   - [ ] Newly created tweet should be manually inserted into the timeline and not rely on a full refresh
   - [ ] User can **see a counter with total number of characters left for tweet** on compose tweet page
 
 The following **optional** features are implemented:
 
-- [ ] User can **pull down to refresh tweets timeline**
-- [ ] User is using **"Twitter branded" colors and styles**
+- [x] User can **pull down to refresh tweets timeline**
+- [x] User is using **"Twitter branded" colors and styles**
 - [ ] User sees an **indeterminate progress indicator** when any background or network task is happening
 - [ ] User can **select "reply" from detail view to respond to a tweet**
   - [ ] User that wrote the original tweet is **automatically "@" replied in compose**
@@ -31,7 +31,7 @@ The following **bonus** features are implemented:
 - [ ] User can view more tweets as they scroll with infinite pagination
 - [ ] Compose tweet functionality is build using modal overlay
 - [ ] Use Parcelable instead of Serializable using the popular [Parceler library](http://guides.codepath.org/android/Using-Parceler).
-- [ ] Replace all icon drawables and other static image assets with [vector drawables](http://guides.codepath.org/android/Drawables#vector-drawables) where appropriate.
+- [x] Replace all icon drawables and other static image assets with [vector drawables](http://guides.codepath.org/android/Drawables#vector-drawables) where appropriate.
 - [ ] User can **click a link within a tweet body** on tweet details view. The click will launch the web browser with relevant page opened.
 - [ ] User can view following / followers list through any profile they view.
 - [ ] User can see embedded image media within the tweet detail view
