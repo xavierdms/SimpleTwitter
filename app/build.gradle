@@ -9,8 +9,10 @@ android {
         applicationId "com.codepath.apps.restclienttemplate"
         minSdkVersion 17
         targetSdkVersion 28
+        vectorDrawables.useSupportLibrary = true
 
-        // Room schemas
+
+    // Room schemas
         javaCompileOptions {
             annotationProcessorOptions {
                 arguments = ["room.schemaLocation": "$projectDir/schemas".toString()]
@@ -51,6 +53,13 @@ dependencies {
     implementation 'com.android.support:support-v4:28.0.0'
     implementation 'org.parceler:parceler-api:1.1.12'
     annotationProcessor 'org.parceler:parceler:1.1.12'
+    implementation "com.android.support:appcompat-v7:28.0.0"
+    implementation "com.android.support:design:28.0.0"
+    implementation "com.android.support:percent:28.0.0"
+    implementation "com.android.support:support-vector-drawable:28.0.0" // VectorDrawableCompat
+    implementation "com.android.support:animated-vector-drawable:28.0.0" // AnimatedVectorDrawableCompat
+    implementation "com.android.support:transition:28.0.0"
+    implementation "com.android.support:support-annotations:28.0.0"
 }
 
 
