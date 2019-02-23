@@ -6,6 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".ComposeActivity">
 
+    <!-- Look at working with edittext guide on character count
+    https://guides.codepath.org/android/Working-with-the-EditText
+    -->
     <EditText
         android:id="@+id/etCompose"
         android:layout_width="0dp"
@@ -14,7 +17,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:ems="10"
-        android:hint="@string/what_s_on_your_mind"
+        android:hint="@string/compose_hint"
         android:inputType="textMultiLine"
         android:minLines="5"
         app:layout_constraintEnd_toEndOf="parent"
