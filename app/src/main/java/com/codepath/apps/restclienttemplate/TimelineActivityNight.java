@@ -3,6 +3,7 @@ package com.codepath.apps.restclienttemplate;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -28,7 +29,9 @@ import cz.msebera.android.httpclient.Header;
 
 public class TimelineActivityNight extends AppCompatActivity {
 
+
     private final int REQUEST_CODE = 20;
+
     private TwitterClient client;
     RecyclerView rvTweets;
     private TweetsAdapterNight adapter;
@@ -80,6 +83,15 @@ public class TimelineActivityNight extends AppCompatActivity {
             public void onClick(View v) {
                 startActivity(new Intent(TimelineActivityNight.this, TimelineActivity.class
                 ));
+            }
+        });
+
+        FloatingActionButton fabCompose = findViewById(R.id.fabCompose);
+        fabCompose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(TimelineActivityNight.this, ComposeActivityNight.class);
+                startActivityForResult(i, REQUEST_CODE);
             }
         });
     }

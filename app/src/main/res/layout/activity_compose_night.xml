@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorNight"
     tools:context=".ComposeActivity">
 
     <!-- Look at working with edittext guide on character count
@@ -20,6 +21,8 @@
         android:hint="@string/compose_hint"
         android:inputType="textMultiLine"
         android:minLines="5"
+        android:textColor="@color/colorBlueGray"
+        android:textColorHint="@color/colorBlueGray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

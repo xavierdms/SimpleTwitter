@@ -3,6 +3,7 @@ package com.codepath.apps.restclienttemplate;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -29,7 +30,7 @@ import cz.msebera.android.httpclient.Header;
 public class TimelineActivity extends AppCompatActivity {
 
 
-    private final int REQUEST_CODE = 20;
+    private final int REQUEST_CODE = 21;
 
     private TwitterClient client;
     RecyclerView rvTweets;
@@ -47,6 +48,11 @@ public class TimelineActivity extends AppCompatActivity {
         client = TwitterApp.getRestClient(this);
 
         swipeContainer = findViewById(R.id.swipeContainer);
+
+        swipeContainer.setColorSchemeResources(R.color.colorAccent,
+                R.color.colorNightBar,
+                R.color.colorAccent,
+                R.color.colorNightBar);
 
         // find the recycler view
         rvTweets = findViewById(R.id.rvTweets);
@@ -79,8 +85,17 @@ public class TimelineActivity extends AppCompatActivity {
             }
         });
 
+        FloatingActionButton fabCompose = findViewById(R.id.fabCompose);
+        fabCompose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(TimelineActivity.this, ComposeActivity.class);
+                startActivityForResult(i, REQUEST_CODE);
+            }
+        });
 
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -88,6 +103,7 @@ public class TimelineActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

@@ -36,6 +36,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".TimelineActivityNight" />
+        <activity android:name=".ComposeActivityNight" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
