@@ -2,6 +2,7 @@ package com.codepath.apps.restclienttemplate;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -18,6 +19,7 @@ import com.loopj.android.http.JsonHttpResponseHandler;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.parceler.Parcels;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,10 +28,12 @@ import cz.msebera.android.httpclient.Header;
 
 public class TimelineActivity extends AppCompatActivity {
 
+
+    private final int REQUEST_CODE = 20;
+
     private TwitterClient client;
     RecyclerView rvTweets;
     private TweetsAdapter adapter;
-    private TweetsAdapterNight adapterNight;
     private List<Tweet> tweets;
     private ImageButton ibNight;
 
@@ -55,8 +59,6 @@ public class TimelineActivity extends AppCompatActivity {
         rvTweets.setAdapter(adapter);
 
         ibNight = findViewById(R.id.ibNight);
-        adapterNight = new TweetsAdapterNight(this, tweets);
-        //final View itemTweet = findViewById(R.id.tweetLayout);
 
 
         populateHomeTimeline();
@@ -95,10 +97,24 @@ public class TimelineActivity extends AppCompatActivity {
 
             // Navigate to a new activity
             Intent i = new Intent(this, ComposeActivity.class);
-            this.startActivity(i);
+            this.startActivityForResult(i, REQUEST_CODE);
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        // REQUEST_CODE is defined above
+        if (requestCode == REQUEST_CODE && resultCode == RESULT_OK)
+        {
+            // Pull info out of the data Intent
+            Tweet tweet = Parcels.unwrap(data.getParcelableExtra("tweet"));
+            // Update the recycler view with this tweet
+            tweets.add(0, tweet);
+            adapter.notifyItemInserted(0);
+        }
     }
 
     private void populateHomeTimeline() {

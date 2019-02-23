@@ -2,10 +2,11 @@ package com.codepath.apps.restclienttemplate.models;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.parceler.Parcel;
 
 import static com.codepath.apps.restclienttemplate.models.TimeFormatter.getTimeDifference;
 
-
+@Parcel
 public class Tweet {
 
     public String body;
@@ -14,6 +15,10 @@ public class Tweet {
     public User user;
     public String time;
     public String mediaUrl;
+
+    // empty constructor needed by the Parceler library
+    public Tweet() {
+    }
 
     public static Tweet fromJson(JSONObject jsonObject) throws JSONException {
         Tweet tweet = new Tweet();
