@@ -9,7 +9,7 @@ Time spent: **9** hours spent in total
 The following **required** functionality is completed:
 
 - [x] User can **compose and post a new tweet**
-  - [x] User can click a “Compose” icon in the Action Bar on the top right
+  - [x] User can click a “Compose” icon in a floating action button on the bottom right
   - [x] User can then enter a new tweet and post this to twitter
   - [x] User is taken back to home timeline with **new tweet visible** in timeline
   - [x] Newly created tweet should be manually inserted into the timeline and not rely on a full refresh
@@ -22,12 +22,11 @@ The following **optional** features are implemented:
 
 The following **bonus** features are implemented:
 
-- [x] Compose tweet functionality is using a floating action button
 - [x] Use Parcelable instead of Serializable using the popular [Parceler library](http://guides.codepath.org/android/Using-Parceler).
 - [x] Replace all icon drawables and other static image assets with [vector drawables](http://guides.codepath.org/android/Drawables#vector-drawables) where appropriate.
 
 The following **additional** features are implemented:
-
+- [x] Compose tweet functionality is using a floating action button
 - [x] Links in tweets in list view are clickable and will launch the web browser.
 - [x] User can tap a button to toggle Night Mode theme.
 
